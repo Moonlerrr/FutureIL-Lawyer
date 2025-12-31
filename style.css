@@ -1,0 +1,148 @@
+/* ===== FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+/* ===== GLOBAL ===== */
+body {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: 'Secular One', Arial, sans-serif;
+  font-weight: 800;
+  margin: 0;
+  direction: rtl;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #ffb000;
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+}
+
+/* ===== LAYOUT ===== */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,.6);
+  font-weight: 800;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  font-weight: 900;
+}
+
+/* ===== INPUTS ===== */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-family: 'Secular One', Arial, sans-serif;
+  font-weight: 800;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 8px 12px;
+  width: 100%;
+  background: #ffb000;
+  border: none;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== WORKER CARD ===== */
+.worker {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.worker b {
+  color: #ffb000;
+  font-weight: 900;
+}
+
+/* ===== EDIT BUTTON ===== */
+.editBtn {
+  margin-top: 6px;
+  padding: 6px 10px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+/* ===== DANGER ===== */
+.danger {
+  background: #ef4444;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+}
+
+/* ===== MODAL BOX ===== */
+.modalBox {
+  background: #111;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-align: right; /* 👈 הכל לימין */
+}
+
+/* ===== BONUS AREA ALIGN RIGHT ===== */
+.modalBox label {
+  display: flex;
+  flex-direction: row-reverse; /* 👈 צ׳קבוקס מימין */
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 6px 0;
+  text-align: right;
+}
+
+/* ===== MODAL BUTTONS ===== */
+.modalBox button {
+  width: 100%;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+  resize: vertical;
+}

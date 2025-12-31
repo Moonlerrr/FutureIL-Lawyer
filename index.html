@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Law Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>⚖️ מערכת ניהול עורכי דין</h1>
+</header>
+
+<main>
+
+<!-- הוספת עובד -->
+<section class="card">
+  <h2>➕ הוספת עובד חדש</h2>
+  <input id="nameInput" placeholder="שם עובד">
+  <input id="userIdInput" placeholder="User ID">
+  <select id="rankInput">
+    <option>עורך דין מחוזי</option>
+    <option>עורך דין פלילי</option>
+    <option>עורך דין נוטריון</option>
+    <option>סמנכ״ל</option>
+    <option>מנכ״ל</option>
+  </select>
+  <button onclick="addWorker()">הוסף עובד</button>
+</section>
+
+<!-- סטטיסטיקה + איפוס -->
+<section class="card">
+  <h2>📊 סטטיסטיקה כללית</h2>
+  <div id="stats"></div>
+  <button class="danger" onclick="resetHours()">איפוס שעות</button>
+</section>
+
+<!-- עובדים -->
+<section class="card">
+  <h2>👥 עובדים</h2>
+  <div id="workers"></div>
+</section>
+
+<!-- דוח שבועי -->
+<section class="card">
+  <h2>💼 דוח שבועי</h2>
+  <input id="awaitingInput" type="number" placeholder="ממתינים לתדרוך">
+  <input id="suggestionsInput" placeholder="הצעות">
+  <input id="problemsInput" placeholder="בעיות">
+  <button onclick="generateReport()">הפק דוח שבועי</button>
+  <textarea id="reportOutput" rows="12" readonly></textarea>
+</section>
+
+</main>
+
+<!-- מודאל עריכה -->
+<div id="editModal" class="modal">
+  <div class="modalBox">
+    <h3>✏️ עריכת עובד</h3>
+
+    <label>דרגה</label>
+    <select id="editRank">
+      <option>עורך דין מחוזי</option>
+      <option>עורך דין פלילי</option>
+      <option>עורך דין נוטריון</option>
+      <option>סמנכ״ל</option>
+      <option>מנכ״ל</option>
+    </select>
+
+    <label>סטטוס עבודה</label>
+    <select id="editAbsence">
+      <option>X</option>
+      <option>חיסור</option>
+      <option>חצי מינימום</option>
+      <option>מינימום</option>
+    </select>
+
+    <label>כמה עובדים הביא</label>
+    <input id="editBrought" type="number" min="0">
+
+    <label><input type="checkbox" id="editCourt"> משפט</label>
+    <label><input type="checkbox" id="editLawsuit"> תביעה</label>
+    <label><input type="checkbox" id="editInvestigation"> חקירה</label>
+    <label><input type="checkbox" id="editCar"> מכירת רכב</label>
+    <label><input type="checkbox" id="editAd"> פרסום ביד2</label>
+
+    <button onclick="saveEdit()">שמור</button>
+    <button class="danger" onclick="deleteWorker()">מחק עובד</button>
+    <button onclick="closeEdit()">בטל</button>
+  </div>
+</div>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCH3JPjbYzoYccsoEw-2fVrbggRX3xa-5M",
+    authDomain: "futureil-lawyer-website.firebaseapp.com",
+    projectId: "futureil-lawyer-website",
+    storageBucket: "futureil-lawyer-website.firebasestorage.app",
+    messagingSenderId: "271295358702",
+    appId: "1:271295358702:web:b9b8d2edec04d7069435ff"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
